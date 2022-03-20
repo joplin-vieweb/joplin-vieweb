@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "joplin-terminal-xapi"
+		},
+		{
+			"path": "django-joplin-vieweb"
+		},
+		{
+			"path": ".",
+			"ignore": [
+				"joplin-terminal-xapi/",
+				"joplin-vieweb"
+			  ]
+		}
+	],
+	"settings": {}
+}

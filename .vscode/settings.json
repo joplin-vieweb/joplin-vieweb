@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+      "django-joplin-vieweb": true,
+      "joplin-terminal-xapi": true,
+    },
+  }
