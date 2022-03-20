@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  djangojoplinvieweb:
+    build: django-joplin-vieweb
+    depends_on:
+      - joplin-terminal-xapi
+    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 manage.py runserver 0.0.0.0:8001 --nothreading --noreload"]
+    # command: ["/bin/sh"]
+    # stdin_open: true
+    # tty: true
+    ports:
+      - 8001:8001
+      - 5678:5678
+    volumes:
+      - joplin:/root/.config/joplin:ro
+      - joplin-vieweb:/root/.config/joplin-vieweb
+    # networks:
+    #   - joplin-net
+
+  joplin-terminal-xapi:
+    image: joplin-terminal-xapi
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    volumes:
+      - joplin:/root/.config/joplin
+    # networks:
+    #   - joplin-net
+
+volumes:
+  joplin:
+  joplin-vieweb:
+
+# networks:
+#   joplin-net: {}
