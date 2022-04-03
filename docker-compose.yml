@@ -1,37 +1,71 @@
 version: '3.4'
 
+x-common-variables: &common-variables
+   DOMAIN: your_domain.com
+   DOMAIN_IP: 12.34.56.78
+   CERT_MAIL: webmaster@your_domain.com
+
 services:
   django-joplin-vieweb:
     # image: django-joplin-vieweb
     build: ./django-joplin-vieweb
     # command: ["/bin/sh"]
-    # stdin_open: true
-    # tty: true
+    #stdin_open: true
+    #tty: true
     depends_on:
       - joplin-terminal-xapi
-    ports:
-      - 80:80
+    environment:
+       <<: *common-variables
     restart: unless-stopped
     volumes:
       - joplin:/root/.config/joplin:ro
       - joplin-vieweb:/root/.config/joplin-vieweb
+      - certbot_www:/var/www/certbot/:ro
     networks:
       - joplin-net
 
   joplin-terminal-xapi:
     image: joplin-terminal-xapi
-    # ports:
-    #   - "8080:8080"
-    #   - "8081:8081"
     restart: unless-stopped
     volumes:
       - joplin:/root/.config/joplin
     networks:
       - joplin-net
 
+  joplin-vieweb-certbot:
+    build: ./joplin-vieweb-certbot
+    environment:
+       <<: *common-variables
+    # command: ["/bin/bash"]
+    stdin_open: true
+    tty: true
+    depends_on:
+      - joplin-vieweb-nginx
+    volumes:
+      - certbot_www:/var/www/certbot/:rw
+      - certbot_conf:/etc/letsencrypt/:rw
+
+  joplin-vieweb-nginx:
+    build: ./joplin-vieweb-nginx
+    # command: ["/bin/sh"]
+    # stdin_open: true
+    # tty: true
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+       <<: *common-variables
+    volumes:
+      - certbot_www:/var/www/certbot/:ro
+      - certbot_conf:/etc/letsencrypt/:ro
+    networks:
+      - joplin-net
+
 volumes:
   joplin:
   joplin-vieweb:
+  certbot_www:
+  certbot_conf:
 
 networks:
   joplin-net: {}

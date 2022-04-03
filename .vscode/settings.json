@@ -2,5 +2,7 @@
     "files.exclude": {
       "django-joplin-vieweb": true,
       "joplin-terminal-xapi": true,
+      "joplin-vieweb-certbot": true,
+      "joplin-vieweb-nginx": true,
     },
   }

@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  certbot:
+    image: certbot/certbot:latest
+    depends_on:
+      - joplin-vieweb-nginx
+    volumes:
+      - certbot_www:/var/www/certbot/:rw
+      - certbot_conf:/etc/letsencrypt/:rw
+
+  joplin-vieweb-nginx:
+    build: ./joplin-vieweb-nginx
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - server_name=guillot.fr.nf
+    volumes:
+      - certbot_www:/var/www/certbot/:ro
+      - certbot_conf:/etc/letsencrypt/:ro
+
+volumes:
+  certbot_www:
+  certbot_conf:

@@ -9,6 +9,14 @@
 			"path": "joplin-terminal-xapi"
 		},
 		{
+			"name": "joplin-vieweb-certbot",
+			"path": "joplin-vieweb-certbot"
+		},
+		{
+			"name": "joplin-vieweb-nginx",
+			"path": "joplin-vieweb-nginx"
+		},
+		{
 			"name": "jolpin-vieweb",
 			"path": "."
 		}
