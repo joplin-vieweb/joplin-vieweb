@@ -1,0 +1,61 @@
+version: '3.4'
+
+x-common-variables: &common-variables
+   DOMAIN: your_domain.com
+   DOMAIN_IP: 12.34.56.78
+   CERT_MAIL: you@zaclys.net
+
+services:
+  django-joplin-vieweb:
+    image: gri38/django-joplin-vieweb:latest
+    depends_on:
+      - joplin-terminal-xapi
+    environment:
+       <<: *common-variables
+    restart: unless-stopped
+    volumes:
+      - joplin:/root/.config/joplin:ro
+      - joplin-vieweb:/root/.config/joplin-vieweb
+      - certbot_www:/var/www/certbot/:ro
+    networks:
+      - joplin-net
+
+  joplin-terminal-xapi:
+    image: gri38/joplin-terminal-xapi:latest
+    restart: unless-stopped
+    volumes:
+      - joplin:/root/.config/joplin
+    networks:
+      - joplin-net
+
+  joplin-vieweb-certbot:
+    image: gri38/joplin-vieweb-certbot:latest
+    environment:
+       <<: *common-variables
+    depends_on:
+      - joplin-vieweb-nginx
+    volumes:
+      - certbot_www:/var/www/certbot/:rw
+      - certbot_conf:/etc/letsencrypt/:rw
+
+  joplin-vieweb-nginx:
+    image: gri38/joplin-vieweb-nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+       <<: *common-variables
+    volumes:
+      - certbot_www:/var/www/certbot/:ro
+      - certbot_conf:/etc/letsencrypt/:ro
+    networks:
+      - joplin-net
+
+volumes:
+  joplin:
+  joplin-vieweb:
+  certbot_www:
+  certbot_conf:
+
+networks:
+  joplin-net: {}
