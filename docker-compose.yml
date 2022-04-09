@@ -1,9 +1,9 @@
 version: '3.4'
 
 x-common-variables: &common-variables
-   DOMAIN: your_domain.com
-   DOMAIN_IP: 12.34.56.78
-   CERT_MAIL: webmaster@your_domain.com
+   ORIGINS: "'my.domain.com', '12.34.56.78'"
+   CERT_DOMAIN: my.domain.com
+   CERT_MAIL: name@zaclys.net
 
 services:
   django-joplin-vieweb:
@@ -25,7 +25,7 @@ services:
       - joplin-net
 
   joplin-terminal-xapi:
-    image: joplin-terminal-xapi
+    build: joplin-terminal-xapi
     restart: unless-stopped
     volumes:
       - joplin:/root/.config/joplin
@@ -37,8 +37,8 @@ services:
     environment:
        <<: *common-variables
     # command: ["/bin/bash"]
-    stdin_open: true
-    tty: true
+    # stdin_open: true
+    # tty: true
     depends_on:
       - joplin-vieweb-nginx
     volumes:
