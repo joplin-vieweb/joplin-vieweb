@@ -4,11 +4,11 @@ A web viewer for Joplin app
 # Please wait until it's ready... it should be quite soon.
 
 # Installation instruction
-Installation is done with docker-compose. The default docker-compose file installs a nginx server with certbot certificates mechanisms, ans listens to ports 80 and 443.  
-If you have your own server, use docker-compose-joplin-only.yml (**todo**)
+Installation is done with docker-compose. The default docker-compose file installs a nginx server with certbot certificates mechanisms, and listens to ports 80 and 443.  
+If you have your own server, use docker-compose-joplin-only.yml (*todo*)
 
 * Not-documented prerequisites: your linux system has docker and docker-compose installed.
-* Get docker-compose.yml **(either you clone this git repo, or you copy [the file](https://github.com/joplin-vieweb/joplin-vieweb/blob/main/docker-compose.yml) somewhere)**
+* Get docker-compose.yml *(either you clone this git repo, or you copy [the file](https://github.com/joplin-vieweb/joplin-vieweb/blob/main/docker-compose.yml) somewhere)*
 * Edit the 3 variables (x-common-variables block) at the top og docker-compose file.
 * And "run".
 ```bash
