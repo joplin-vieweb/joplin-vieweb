@@ -9,14 +9,14 @@ If you have your own server, use docker-compose-joplin-only.yml (*todo*)
 
 * Not-documented prerequisites: your linux system has docker and docker-compose installed.
 * Get docker-compose.yml *(either you clone this git repo, or you copy [the file](https://github.com/joplin-vieweb/joplin-vieweb/blob/main/docker-compose.yml) somewhere)*
-* Edit the 3 variables (x-common-variables block) at the top og docker-compose file.
+* Edit the 3 variables (x-common-variables block) at the top of docker-compose file.
 * And "run".
 ```bash
 cd ~
 mkdir joplin-vieweb
 cd joplin-vieweb
 wget https://raw.githubusercontent.com/joplin-vieweb/joplin-vieweb/main/docker-compose.yml
-vi docker-compose.yml # edit the x-common-variables 3 variables)
+vi docker-compose.yml # edit the x-common-variables (3 variables)
 sudo docker-compose up
 ```
 ## Systemd your docker-compose.
