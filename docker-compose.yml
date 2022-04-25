@@ -1,8 +1,8 @@
 version: '3.4'
 
 x-common-variables: &common-variables
-   DOMAIN: your_domain.com
-   DOMAIN_IP: 12.34.56.78
+   ORIGINS: "'your_domain.com', '12.34.56.78'"
+   CERT_DOMAIN: your_domain.com 
    CERT_MAIL: you@zaclys.net
 
 services:
