@@ -10,11 +10,9 @@ A web viewer for Joplin app
 ! For raspberry users (I am): use 64 bits OS
 ```
 ## Installation
-</span>
 Installation is done with docker-compose. The default docker-compose file installs a nginx server with certbot certificates mechanisms, and listens to ports 80 and 443.  
-If you have your own server, use docker-compose-joplin-only.yml (*todo*). Have a look to [the containers](#components).
-
-
+If you have your own server, use docker-compose-joplin-only.yml (*todo*). Have a look to [the containers](#components).  
+  
 * Prerequisites: your linux system has docker and docker-compose installed
 * Enable docker service at system startup  
 * Get docker-compose.yml *(either you clone this git repo, or you copy [the file](https://github.com/joplin-vieweb/joplin-vieweb/blob/main/docker-compose.yml) somewhere)*  
