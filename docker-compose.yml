@@ -34,6 +34,7 @@ services:
 
   joplin-vieweb-certbot:
     build: ./joplin-vieweb-certbot
+    restart: unless-stopped
     environment:
        <<: *common-variables
     # command: ["/bin/bash"]
@@ -47,6 +48,7 @@ services:
 
   joplin-vieweb-nginx:
     build: ./joplin-vieweb-nginx
+    restart: unless-stopped
     # command: ["/bin/sh"]
     # stdin_open: true
     # tty: true
