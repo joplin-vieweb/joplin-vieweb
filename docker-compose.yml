@@ -30,6 +30,7 @@ services:
 
   joplin-vieweb-certbot:
     image: gri38/joplin-vieweb-certbot:latest
+    restart: unless-stopped
     environment:
        <<: *common-variables
     depends_on:
@@ -40,6 +41,7 @@ services:
 
   joplin-vieweb-nginx:
     image: gri38/joplin-vieweb-nginx:latest
+    restart: unless-stopped
     ports:
       - 80:80
       - 443:443
