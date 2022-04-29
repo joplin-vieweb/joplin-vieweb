@@ -1,7 +1,61 @@
 # joplin-vieweb
-A web viewer for Joplin app
+A simple web viewer for [Joplin](https://joplinapp.org/) notes.
 
-# Please wait until it's ready... it should be quite soon.
+## Purpose
+I'm going to use [Joplin](https://joplinapp.org/) as a notes application.  
+It's a long time I wanted for something like Joplin: opensource, not coupled to a web giant, and without infinite storage: storage has a price, we should pay for it.
+
+Joplin-vieweb purpose is to provide an **online view of my Joplin notes**.  
+It's running on a "Django server", running beside [Joplin terminal app](https://joplinapp.org/terminal/). 
+
+## Screenshot
+![oplin-vieweb-screenshot](https://user-images.githubusercontent.com/26554495/121716124-f1e88f80-cadf-11eb-806b-c8b8d8c5ec03.png)
+
+## Features and not(-yet?) features
+### Yes it does ❤
+- Protect joplin-vieweb access by login
+- Display notebooks, and notes
+  - images
+  - attachments
+- code syntax highlight
+- Add a table of content if note contains headers
+- Display tags, and notes linked.
+- Joplin sync:
+  - ![image](https://user-images.githubusercontent.com/26554495/121716272-1d6b7a00-cae0-11eb-9f39-d01b81d15d1f.png)
+  - Background periodic joplin sync
+  - Manual trigged sync, with notebooks and tag refresh
+- Public link if note has ***public*** tag  
+![image](https://user-images.githubusercontent.com/26554495/121775399-ac7f9d00-cb87-11eb-9f4a-2790af8b5f77.png)
+- Option to number (or not) header in notes:  
+![image](https://user-images.githubusercontent.com/26554495/121775425-e6e93a00-cb87-11eb-9018-80f24ac505a4.png)
+- Tag edition: add / remove / create tags in notes:
+![image](https://user-images.githubusercontent.com/26554495/122593861-89ad2700-d066-11eb-9cc0-bf82a0efef8e.png)
+Once tags edited, a little reminder not to forget to synchronize Joplin:  
+![image](https://user-images.githubusercontent.com/26554495/122594366-37203a80-d067-11eb-96c5-c3324fee376b.png)
+- Checkbox list changes can be saved to notes.  
+- ![image](https://user-images.githubusercontent.com/26554495/122877394-daf33a00-d336-11eb-8ac6-11ba16a240d7.png)
+- Note edition / deletion, with support of image paste, and image / attachment drag&drop.
+![image](https://user-images.githubusercontent.com/26554495/126487101-3d6fdae0-d1ed-4929-b000-5981928a2eb6.png)
+
+
+![image](https://user-images.githubusercontent.com/26554495/126596832-a15895b6-90fb-416e-849a-192dfe8b08fd.png)
+- Note creation
+![joplin_create_note](https://user-images.githubusercontent.com/26554495/126760127-de455fb1-76ab-4d05-9ace-44f8fe719284.gif)
+- Notebook edition: create / rename / delete
+![notebook_edition](https://user-images.githubusercontent.com/26554495/127444638-a059931a-32f6-4027-8921-2dc073bf7034.gif)
+- Notes history: list of the latest notes consulted, to be able to open them quickly, or pin them:
+![demo_joplin_notes_history](https://user-images.githubusercontent.com/26554495/130871700-a78e54c1-81ff-4373-8b30-06bd826038d8.gif)
+- Tabs in notes (not displayed in joplin applications). Syntax here.
+![image](https://user-images.githubusercontent.com/26554495/130869166-4be37017-450b-4ee4-942a-3936963faaf8.png)
+- Hyperlink preview in notes, on mouse hover:
+![2022-02-08 10-31-54](https://user-images.githubusercontent.com/26554495/152967009-39286c76-bdc4-43bf-aaaa-1f04911cdf5f.gif)
+
+
+### No it doesn't (yet?) 💔
+- Sort notebooks nor notes
+- Move note or notebook from one notebook to another.
+- No specific handling for todos.
+- Search for notes or tags
 
 # Installation / configuration instructions
 ```diff
@@ -42,6 +96,20 @@ sudo docker-compose up
 ```
 
 ## Configuration
+### Users
+First you must change admin password:
+* login to https://your_domain.com/admin/ (login: admin / password: admin)
+![image](https://user-images.githubusercontent.com/26554495/165942815-14d265eb-e68a-46c3-9cc4-a1171c3ae7e8.png)
+* Change the admin password:  
+![image](https://user-images.githubusercontent.com/26554495/165943055-ffea85c9-ddc2-4894-ae88-689ef5495d7c.png)
+* If you want to login to joplin-vieweb with another login than admin: create a user:  
+![image](https://user-images.githubusercontent.com/26554495/165943223-12278d65-060b-45a1-bc85-24d3db091407.png)
+* Now you can logout and visit https://your_domain.com/joplin  
+![image](https://user-images.githubusercontent.com/26554495/165943443-718f0e50-8949-44a6-a9c4-629817442bc1.png)
+* Login with admin or your newly created user:  
+![image](https://user-images.githubusercontent.com/26554495/165943574-dc6349ac-6d3d-4f04-ae34-5c4353c24e15.png)
+
+### Synchronisation
 You should configure a synchronisation to secure your notes:
 
 ![image](https://user-images.githubusercontent.com/26554495/165929289-9a4e0855-e408-45c3-bc98-f9e9fb8b31cb.png)  
