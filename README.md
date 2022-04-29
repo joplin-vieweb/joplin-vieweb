@@ -103,7 +103,7 @@ First you must change admin password:
 * Change the admin password:  
 ![image](https://user-images.githubusercontent.com/26554495/165943055-ffea85c9-ddc2-4894-ae88-689ef5495d7c.png)
 * If you want to login to joplin-vieweb with another login than admin: create a user:  
-![image](https://user-images.githubusercontent.com/26554495/165943223-12278d65-060b-45a1-bc85-24d3db091407.png)
+![image](https://user-images.githubusercontent.com/26554495/165943798-c7d03978-34ce-416e-98de-fab5fe4091e8.png)
 * Now you can logout and visit https://your_domain.com/joplin  
 ![image](https://user-images.githubusercontent.com/26554495/165943443-718f0e50-8949-44a6-a9c4-629817442bc1.png)
 * Login with admin or your newly created user:  
