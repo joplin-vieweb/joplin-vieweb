@@ -92,6 +92,7 @@ Congratulation, the server is running. If the system reboots, the server will st
 When a new version is available, simply go to your docker-compose file:
 ```bash
 sudo docker-compose down
+sudo docker-compose pull
 sudo docker-compose up
 ```
 
