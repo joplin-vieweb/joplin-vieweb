@@ -1,7 +1,7 @@
 version: '3.4'
 
 x-common-variables: &common-variables
-   ORIGINS: "'your_domain.com', '12.34.56.78'"
+   ORIGINS: "'https://your_domain.com', 'https://12.34.56.78'"
    CERT_DOMAIN: your_domain.com 
    CERT_MAIL: you@zaclys.net
 
