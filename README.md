@@ -65,16 +65,30 @@ Once tags edited, a little reminder not to forget to synchronize Joplin:
 ```
 ## Installation
 Installation is done with docker-compose. The default docker-compose file installs a nginx server with certbot certificates mechanisms, and listens to ports 80 and 443.  
-If you have your own server, use docker-compose-joplin-only.yml (*todo*). Have a look to [the containers](#components).  
+If you have your own server, use [docker-compose-joplin-only.yml](https://github.com/joplin-vieweb/joplin-vieweb/blob/main/docker-compose-joplin-only.yml). Have a look to [the containers](#components).  
   
 * Prerequisites: your linux system has docker and docker-compose installed
 * Enable docker service at system startup  
 * Get docker-compose.yml *(either you clone this git repo, or you copy [the file](https://github.com/joplin-vieweb/joplin-vieweb/blob/main/docker-compose.yml) somewhere)*  
 * Edit the 3 variables (x-common-variables block) at the top of docker-compose file:
-  * ORIGINS: write the domain and/or IP address (only those origins are allowed to access joplin-vieweb)
+  * ORIGINS: write the domain and/or IP address (only those origins are allowed to access joplin-vieweb)  
+    Exemple:
+    ```yaml
+    x-common-variables: &common-variables
+        ORIGINS: "'http://localhost:8080', 'http://192.168.21.1:8080'"
+    ```
+    or
+    ```yaml
+    x-common-variables: &common-variables
+        ORIGINS: "'https://your_domain.com', 'https://12.34.56.78'"
+        CERT_DOMAIN: your_domain.com 
+        CERT_MAIL: you@zaclys.net
+    ```
   * If you use nginx and certbot containers:
     * CERT_DOMAIN: your domain so let's encrypt can contact (IP address doesn't work: you need a domain)
     * CERT_MAIL: a mail needed by let's encrypt.
+  * If you don't use nginx ans certbot container (if you use docker-compose-joplin-only.yml):
+    * Change \<PORT-TO-YOUR-PROXY\> to fit your proxy setup.
 * And "run"
 ```bash
 sudo systemctl enable docker
