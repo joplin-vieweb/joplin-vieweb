@@ -13,7 +13,7 @@ It's running on a "Django server", running beside [Joplin terminal app](https://
 
 ## Features and not(-yet?) features
 ### Yes it does ❤
-- Protect joplin-vieweb access by login
+- Protect joplin-vieweb access by login (see [here](https://github.com/joplin-vieweb/joplin-vieweb/releases/tag/v2.0.3) how to logout)
 - Display notebooks, and notes
   - images
   - attachments
