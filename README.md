@@ -88,7 +88,7 @@ If you have your own server, use [docker-compose-joplin-only.yml](https://github
   * If you use nginx and certbot containers:
     * CERT_DOMAIN: your domain so let's encrypt can contact (IP address doesn't work: you need a domain)
     * CERT_MAIL: a mail needed by let's encrypt.
-  * If you don't use nginx ans certbot container (if you use docker-compose-joplin-only.yml):
+  * If you don't use nginx and certbot container (if you use docker-compose-joplin-only.yml):
     * Change \<PORT-TO-YOUR-PROXY\> to fit your proxy setup.
 * And "run"
 ```bash
@@ -130,7 +130,7 @@ You should configure a synchronisation to secure your notes:
 
 ![image](https://user-images.githubusercontent.com/26554495/165929289-9a4e0855-e408-45c3-bc98-f9e9fb8b31cb.png)  
 1️⃣ Click the settings tab  
-2️⃣ Input synchronisation data (only next cloud is supported for now, if you would like other services, ask in a conversation)  
+2️⃣ Input synchronisation data (only next cloud and joplin server are supported for now, if you would like other services, ask in a conversation)  
 3️⃣ Test  
 4️⃣ If test result is OK: save
 
