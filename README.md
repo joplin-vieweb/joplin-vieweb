@@ -52,8 +52,7 @@ Once tags edited, a little reminder not to forget to synchronize Joplin:
 - Hyperlink preview in notes, on mouse hover:
 ![2022-02-08 10-31-54](https://user-images.githubusercontent.com/26554495/152967009-39286c76-bdc4-43bf-aaaa-1f04911cdf5f.gif)
 - Render KaTeX:
-![image](https://user-images.githubusercontent.com/26554495/171372460-9a6254dd-6ec8-4d23-902a-0653f9cd64e7.png)
-
+![image](https://user-images.githubusercontent.com/26554495/171394071-a7f03926-73ee-4d44-9c27-b70f0b9d40d5.png)
 
 ### No it doesn't (yet?) 💔
 - Sort notebooks nor notes
