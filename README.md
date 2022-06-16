@@ -12,6 +12,12 @@ It's running on a "Django server", running beside [Joplin terminal app](https://
 ## Screenshot
 ![oplin-vieweb-screenshot](https://user-images.githubusercontent.com/26554495/121716124-f1e88f80-cadf-11eb-806b-c8b8d8c5ec03.png)
 
+## Contact
+I you want to discuss, ask, suggest... Please:
+- Input [an issue](https://github.com/joplin-vieweb/joplin-vieweb/issues), or
+- start [a discussion on github](https://github.com/joplin-vieweb/joplin-vieweb/discussions), or 
+- post [on discord](https://discord.gg/akkn2y8vEg)
+
 ## Features and not(-yet?) features
 ### Yes it does ❤
 - Protect joplin-vieweb access by login (see [here](https://github.com/joplin-vieweb/joplin-vieweb/releases/tag/v2.0.3) how to logout)
