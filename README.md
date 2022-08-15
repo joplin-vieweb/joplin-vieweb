@@ -123,8 +123,6 @@ sudo docker-compose up
 ```diff
 ! Users configuration is done from this url: https://your_domain.com/admin/
 ! Usage url, to access joplin notes: https://your_domain.com/joplin
-! Only arm64 and amd64 architectures
-! For raspberry users (I am): use 64 bits OS
 ```
 ### Users
 First you must change admin password:
@@ -154,6 +152,9 @@ If your cloud already contains joplin content, do a synchronisation:
 1️⃣ Click the synchronisation tab  
 2️⃣ click the sync button  
 3️⃣ Wait for the sync to finish (it may take a long time depending on your cloud content)
+
+### Joplin
+You can now access your notebooks: https://your_domain/joplin (⚠ don't forget the /joplin ⚠)
 
 # Components
 ![image](https://user-images.githubusercontent.com/26554495/165928456-731c2f4d-0280-4d95-a26c-1edf3020bb35.png)
