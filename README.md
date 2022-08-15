@@ -119,7 +119,13 @@ sudo docker-compose pull
 sudo docker-compose up
 ```
 
-## Configuration
+## Configuration and usage
+```diff
+! Users configuration is done from this url: https://your_domain.com/admin/
+! Usage url, to access joplin notes: https://your_domain.com/joplin
+! Only arm64 and amd64 architectures
+! For raspberry users (I am): use 64 bits OS
+```
 ### Users
 First you must change admin password:
 * login to https://your_domain.com/admin/ (login: admin / password: admin)
