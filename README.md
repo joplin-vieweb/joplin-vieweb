@@ -75,6 +75,7 @@ Once tags edited, a little reminder not to forget to synchronize Joplin:
 ## Installation
 Installation is done with docker-compose. The default docker-compose file installs a nginx server with certbot certificates mechanisms, and listens to ports 80 and 443.  
 If you have your own server, use [docker-compose-joplin-only.yml](https://github.com/joplin-vieweb/joplin-vieweb/blob/main/docker-compose-joplin-only.yml). Have a look to [the containers](#components).  
+&nbsp;&nbsp;&nbsp;&nbsp;If your server is apache2, have a look to [this apache configuration procedure](https://github.com/joplin-vieweb/joplin-vieweb/wiki/Install-joplin-vieweb-on-a-local-web-server,-and-access-it-externally-from-a-subdomain-through-apache2).
   
 * Prerequisites: your linux system has docker and docker-compose installed
 * Enable docker service at system startup  
