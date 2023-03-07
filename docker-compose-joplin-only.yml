@@ -1,11 +1,11 @@
 version: '3.4'
 
 x-common-variables: &common-variables
-   ORIGINS: "'localhost', '192.168.21.1'"
+   ORIGINS: "'http://localhost', 'http://192.168.21.1'"
 
 services:
   django-joplin-vieweb:
-    build: django-joplin-vieweb
+    image: gri38/django-joplin-vieweb:latest
     depends_on:
       - joplin-terminal-xapi
     environment:
@@ -14,22 +14,22 @@ services:
     ports:
       - <PORT-TO-YOUR-PROXY>:8000
     volumes:
-      - joplin-only:/root/.config/joplin:ro
-      - joplin-only-vieweb:/root/.config/joplin-vieweb
+      - joplin:/root/.config/joplin:ro
+      - joplin-vieweb:/root/.config/joplin-vieweb
     networks:
-      - joplin-only-net
+      - joplin-net
 
   joplin-terminal-xapi:
-    build: joplin-terminal-xapi
+    image: gri38/joplin-terminal-xapi:latest
     restart: unless-stopped
     volumes:
-      - joplin-only:/root/.config/joplin
+      - joplin:/root/.config/joplin
     networks:
-      - joplin-only-net
+      - joplin-net
 
 volumes:
-  joplin-only:
-  joplin-only-vieweb:
+  joplin:
+  joplin-vieweb:
 
 networks:
-  joplin-only-net: {}
+  joplin-net: {}

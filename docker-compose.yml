@@ -1,17 +1,13 @@
 version: '3.4'
 
 x-common-variables: &common-variables
-   ORIGINS: "'my.domain.com', '12.34.56.78'"
-   CERT_DOMAIN: my.domain.com
-   CERT_MAIL: name@zaclys.net
+   ORIGINS: "'https://your_domain.com', 'https://12.34.56.78'"
+   CERT_DOMAIN: your_domain.com 
+   CERT_MAIL: you@zaclys.net
 
 services:
   django-joplin-vieweb:
-    # image: django-joplin-vieweb
-    build: ./django-joplin-vieweb
-    # command: ["/bin/sh"]
-    #stdin_open: true
-    #tty: true
+    image: gri38/django-joplin-vieweb:latest
     depends_on:
       - joplin-terminal-xapi
     environment:
@@ -25,7 +21,7 @@ services:
       - joplin-net
 
   joplin-terminal-xapi:
-    build: joplin-terminal-xapi
+    image: gri38/joplin-terminal-xapi:latest
     restart: unless-stopped
     volumes:
       - joplin:/root/.config/joplin
@@ -33,13 +29,10 @@ services:
       - joplin-net
 
   joplin-vieweb-certbot:
-    build: ./joplin-vieweb-certbot
+    image: gri38/joplin-vieweb-certbot:latest
     restart: unless-stopped
     environment:
        <<: *common-variables
-    # command: ["/bin/bash"]
-    # stdin_open: true
-    # tty: true
     depends_on:
       - joplin-vieweb-nginx
     volumes:
@@ -47,11 +40,8 @@ services:
       - certbot_conf:/etc/letsencrypt/:rw
 
   joplin-vieweb-nginx:
-    build: ./joplin-vieweb-nginx
+    image: gri38/joplin-vieweb-nginx:latest
     restart: unless-stopped
-    # command: ["/bin/sh"]
-    # stdin_open: true
-    # tty: true
     ports:
       - 80:80
       - 443:443
