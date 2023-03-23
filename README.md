@@ -143,7 +143,7 @@ You should configure a synchronisation to secure your notes:
 
 ![image](https://user-images.githubusercontent.com/26554495/165929289-9a4e0855-e408-45c3-bc98-f9e9fb8b31cb.png)  
 1️⃣ Click the settings tab  
-2️⃣ Input synchronisation data (only next cloud and joplin server are supported for now, if you would like other services, ask in a conversation)  
+2️⃣ Input synchronisation data (only nextcloud, webdav and joplin server are supported for now, if you would like other services, ask in a conversation)  
 3️⃣ Test  
 4️⃣ If test result is OK: save
 
