@@ -31,7 +31,7 @@ I you want to discuss, ask, suggest... Please:
   - ![image](https://user-images.githubusercontent.com/26554495/121716272-1d6b7a00-cae0-11eb-9f39-d01b81d15d1f.png)
   - Background periodic joplin sync
   - Manual trigged sync, with notebooks and tag refresh
-  - Supported target: nextcloud, Joplin server
+  - Supported target: nextcloud, Joplin server, webdav
 - Public link if note has ***public*** tag  
 ![image](https://user-images.githubusercontent.com/26554495/121775399-ac7f9d00-cb87-11eb-9f4a-2790af8b5f77.png)
 - Option to number (or not) header in notes:  
