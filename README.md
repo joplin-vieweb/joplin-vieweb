@@ -24,6 +24,9 @@ I you want to discuss, ask, suggest... Please:
 - Display notebooks, and notes
   - images
   - attachments
+- search for notes
+  - Press f key, or click magnifying glass icon
+  - Search syntax: documented [here](https://discourse.joplinapp.org/t/search-syntax-documentation/9110) or [here](https://joplinapp.org/help/#searching).
 - code syntax highlight
 - Add a table of content if note contains headers
 - Display tags, and notes linked.
@@ -64,7 +67,6 @@ Once tags edited, a little reminder not to forget to synchronize Joplin:
 - Sort notebooks nor notes
 - Move note or notebook from one notebook to another.
 - No specific handling for todos.
-- Search for notes or tags
 
 # Installation / configuration instructions
 ```diff
