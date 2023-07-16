@@ -27,6 +27,7 @@ I you want to discuss, ask, suggest... Please:
 - search for notes
   - Press f key, or click magnifying glass icon
   - Search syntax: documented [here](https://discourse.joplinapp.org/t/search-syntax-documentation/9110) or [here](https://joplinapp.org/help/#searching).
+  - ![image](https://github.com/joplin-vieweb/joplin-vieweb/assets/26554495/7b9645fc-1bd7-4877-8ba3-751e6e53f398)
 - code syntax highlight
 - Add a table of content if note contains headers
 - Display tags, and notes linked.
