@@ -160,6 +160,11 @@ If your cloud already contains joplin content, do a synchronisation:
 ### Joplin
 You can now access your notebooks: https://your_domain/joplin (⚠ don't forget the /joplin ⚠)
 
+### Your reverse proxy: image size
+Your reverse proxy probably limits the size of images that can be uploaded, and therefore put in notes.  
+Don't forget to configure.  
+For instance, or if you use the one provided, it's configured [here](https://github.com/joplin-vieweb/joplin-vieweb-nginx/blob/main/nginx_conf/joplin_vieweb.conf.template#L3).
+
 # Components
 ![image](https://user-images.githubusercontent.com/26554495/165928456-731c2f4d-0280-4d95-a26c-1edf3020bb35.png)
 
