@@ -2,6 +2,7 @@ version: '3.4'
 
 x-common-variables: &common-variables
    ORIGINS: "'https://your_domain.com', 'https://12.34.56.78'"
+   JOPLIN_LOGIN_REQUIRED: True
    CERT_DOMAIN: your_domain.com 
    CERT_MAIL: you@zaclys.net
 

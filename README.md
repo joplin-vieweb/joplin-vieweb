@@ -83,7 +83,7 @@ If you have your own server, use [docker-compose-joplin-only.yml](https://github
 * Prerequisites: your linux system has docker and docker-compose installed
 * Enable docker service at system startup  
 * Get docker-compose.yml *(either you clone this git repo, or you copy [the file](https://github.com/joplin-vieweb/joplin-vieweb/blob/main/docker-compose.yml) somewhere)*  
-* Edit the 3 variables (x-common-variables block) at the top of docker-compose file:
+* Edit the 4 variables (x-common-variables block) at the top of docker-compose file:
   * ORIGINS: write the domain and/or IP address (only those origins are allowed to access joplin-vieweb)  
     Exemple:
     ```yaml
@@ -97,6 +97,8 @@ If you have your own server, use [docker-compose-joplin-only.yml](https://github
         CERT_DOMAIN: your_domain.com 
         CERT_MAIL: you@zaclys.net
     ```
+  * If you want to protect your notes access by requiring a login, set `JOPLIN_LOGIN_REQUIRED: True`. If you don't want the user to log in, set `JOPLIN_LOGIN_REQUIRED: False`.
+
   * If you use nginx and certbot containers:
     * CERT_DOMAIN: your domain so let's encrypt can contact (IP address doesn't work: you need a domain)
     * CERT_MAIL: a mail needed by let's encrypt.

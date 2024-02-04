@@ -2,6 +2,7 @@ version: '3.4'
 
 x-common-variables: &common-variables
    ORIGINS: "'http://localhost', 'http://192.168.21.1'"
+   JOPLIN_LOGIN_REQUIRED: True
 
 services:
   django-joplin-vieweb:
