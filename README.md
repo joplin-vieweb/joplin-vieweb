@@ -97,6 +97,14 @@ If you have your own server, use [docker-compose-joplin-only.yml](https://github
         CERT_DOMAIN: your_domain.com 
         CERT_MAIL: you@zaclys.net
     ```
+  * **⚠** If you prefer writing the ORIGINS directly in django-joplin-vieweb service environment, do it as follow:
+    ```yaml
+    services:
+      django-joplin-vieweb:
+        environment:
+          - ORIGINS='https://your_domain.com', 'https://12.34.56.78'
+    ```
+    Note there is no surrounding double quotes (")
   * If you want to protect your notes access by requiring a login, set `JOPLIN_LOGIN_REQUIRED: True`. If you don't want the user to log in, set `JOPLIN_LOGIN_REQUIRED: False`.
 
   * If you use nginx and certbot containers:
